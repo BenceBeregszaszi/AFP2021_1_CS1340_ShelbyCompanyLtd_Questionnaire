@@ -8,3 +8,27 @@
             - Nagy Péter Axel
            
             - Sárosi Gábor
+
+##  A rendszer célja 
+
+## Projektterv
+
+## Üzleti folyamatok modellje
+
+## Követelmények
+
+## Funkcionális terv
+
+## Fizikai környezet
+
+## Architektúrális terv
+
+## Adatbázis terv
+
+## Implementációs terv
+
+## Tesztterv
+
+## Telepítési terv
+
+## Karbantartási terv
