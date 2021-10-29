@@ -1,10 +1,13 @@
-# Quiz game
+# AFP_2021_CS1340_ShelbyCompanyLtd
+# Shelby Company Limited
 
-This project is made for Eszterházy Károly Catholic University. We developed a web application for Magic Tower which provides a quiz for the visitors. Each player has to answer several questions in astrology and physics. The goal is to reach the top of the leaderboard.
+Ez a repository az Eszterházy Károly Katolikus Egyetem 2021. 1. félévi alkalmazások fejlesztése projekt labor gyakorlatához tartozik.
 
-## Developers
+## Csapattagok
 
-- [Bence Bogdandy](https://github.com/benczus)
-- [Gabor Bagoly](https://github.com/OOHQ3E)
-- [Gabor Sarosi](https://github.com/FeNToNelele/)
-- [Richard Matuch](https://github.com/R1chard2001)
+- [Banyik Nándor](https://github.com/Banyik)
+- [Bognár Viktória](https://github.com/apalosaa4)
+- [Cserneczky Bálint](https://github.com/unicsbalint)
+- [Kecse Károly](https://github.com/KecseKaroly/)
+- [Nagy Péter Axel](https://github.com/Axel0103/)
+- [Sárosi Gábor](https://github.com/FeNToNelele/)
