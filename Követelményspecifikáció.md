@@ -15,20 +15,34 @@ Mivel a világunkban minden gyorsul, egyre kevesebb van ideje bármire is az emb
 ## Jelenlegi üzleti folyamatok
 
  1. Az alapanyagok beszerzése:
-  - papír beszerzése
-  - tintapatronok megvásárlása
+  - Papír beszerzése
+  - Tintapatronok megvásárlása
  2. A kérdőív elkészítése:
-  - kérdőív megtervezése
-  - nyomtatás
+  - Kérdőív megtervezése
+  - Nyomtatás
  3. A kérdőívek postázása:
-  - visszaküldési boríték felcímzése
-  - postára feladás
+  - Visszaküldési boríték felcímzése
+  - Postára feladás
  4. A visszaérkező válaszok elemzése:
-  - a beérkezett levelek ellenőrzése
-  - konklúzió levonása az eredményekből
+  - A beérkezett levelek ellenőrzése
+  - Konklúzió levonása az eredményekből
 
 
 ## Igényelt üzleti folyamatok
+ 1. Új kérdőív készítése
+  - b. Importálás fájlból
+  - a. Kérdőív készítése a weboldalon
+ 2. Kérdőív kitöltése:
+  - Az oldal megnyitásakor a megrendelő által kiválasztott alapértelmezett kérdőív tölthető ki (bejelentkezés nélkül)
+  - A kitöltés megkezdése előtt egy általános kérdéssor kerül a felhasználó elé, amelyre kizárólag a statisztika miatt van szükség:
+    - Életkora
+    - Neme
+  - A kérdőív végeztével lehetősége lesz a felhasználónak fiókot létrehozni, amivel szükségtelen lesz minden alkalommal kitöltenie az általános kérdéseket
+    - Regisztrációkor szükséges a születési dátum         
+ 3. Eredmények összegzése:
+  - Az általános kérdések eredményei alapján felvázolható a részletes felbontása a kapott válaszok összegzésének
+
+
 
 ## A rendszerre vonatkozó szabályok
 
