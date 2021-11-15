@@ -34,6 +34,20 @@ A megrendelő szeretné leváltani a korszerűtlen és a természetre igencsak k
 
 ## Használati esetek
 
+Admin: Az admin egy külön oldalon tud belépni. Számára megjelenik a felhasználók kezelése, kérdőívek kezelése,
+statisztika menüpontok. 
+Ezeken keresztül teljes felügyelete van a weboldal felett.
+Új kérdőíveket hozhat létre, módosíthatja azokat, kezelheti a regisztrált felhasználókat,
+megtekinthet különféle statisztikákat a kérdőíve után.
+
+Látogató: Nem számít felhasználónak az oldalon. 
+Ő az aktuális kérdőívet töltheti ki az alapadatok megadása után. 
+Ahogy végzett a kitöltéssel, azután regisztrálhat a weboldalra és több kérdőívet is kitölthet. 
+Ezután már nem kell alapadatokat megadnia.
+
+Felhasználó: Ahogy felcsatlakozik az oldalra, megjelennek számára azok a kérdőívek, melyeket még nem töltött ki. Új kérdőív kitöltésekor már nem kell megadnia az alapadatait.
+
+
 ## Képernyő tervek
 
 ## Forgatókönyv
