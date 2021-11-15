@@ -30,5 +30,8 @@
 ## Tesztterv
 
 ## Telepítési terv
+A weboldal használatához szüksége lesz a felhasználónak egy böngésző használatához
+(Opera, Microsoft Edge, Google Chrome, Mozilla Firefox), 
+más egyébre nincs szüksége a felhasználónak.
 
 ## Karbantartási terv
