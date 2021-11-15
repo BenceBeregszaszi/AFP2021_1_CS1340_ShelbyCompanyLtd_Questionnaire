@@ -49,3 +49,14 @@ Mivel a világunkban minden gyorsul, egyre kevesebb van ideje bármire is az emb
 ## Követelménylista
 
 ## Fogalomtár 
+Design - Stílus, forma, kinézet
+
+Importálható - Beolvasható
+
+Intuitív - Magától értetődő
+
+Autentikáció - Hitelesítés. (A projekt esetében: Ne kelljen külön felhasználói fiókot arra létrehozni, hogy kitöltsünk egy kérdőívet.)
+
+Laravel - Egy ingyenes, nyílt forráskódú PHP web framework, melynek célja, hogy MVC modellre illeszkedően leegyszerűsítse a webalkalmazások fejlesztését
+
+MVC: Egy népszerű szoftverfejlesztési dizájn webalkalmazások létrehozásakor.
