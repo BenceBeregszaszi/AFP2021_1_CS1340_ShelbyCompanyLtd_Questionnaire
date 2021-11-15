@@ -28,6 +28,12 @@
 ## Implementációs terv
 
 ## Tesztterv
+A teszteléseket egy külön jegyzőkönyvben fogjuk majd vezetni és folyamatosan jegyzetelni a fejlesztés során.
+Több tesztelés fog történni a fejlesztés alatt (Alfa, Béta és végleges teszt), 
+Minden teszt 1 hetet fog igénybe venni és minden funkció átvizsgálásra fog kerülni.
+A fejlesztő csapat mindegyik tagja külön-külön fogja tesztelni a weboldalt.
+A tesztjegyzőkönyv megtalálható a többi dokumentáció között.
+
 
 ## Telepítési terv
 A weboldal használatához szüksége lesz a felhasználónak egy böngésző használatához
