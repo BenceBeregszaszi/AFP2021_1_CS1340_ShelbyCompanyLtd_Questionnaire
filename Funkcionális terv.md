@@ -17,6 +17,17 @@ A megrendelő szeretné leváltani a korszerűtlen és a természetre igencsak k
 
 ## Követelménylista
 
+| Modul  | Id | Név | Kifejtés |
+| ------------- | ------------- | ------------- | -------------|
+| Felhasználói rendszer | K1  | Admin felület | A megrendelő be tudjon jelentkezni az adminfelületbe |
+| Felhasználói rendszer | K2  | Bejelentkezési felület | Be lehessen lépni az oldalra |
+| Felhasználói rendszer | K3  | Admin felület | A kitöltő egy kérdőív kitöltése után regisztrálhat az oldalra |
+| Felhasználói rendszer | K4  | Jelszómódosítás | A felhasználó meg tudja változtatni a jelszavát |
+| Kérdőív | K5  | Kérdőív létrehozása | Az admin tudjon új kérdőívet létrehozni |
+| Módosítás  | K6  | Kérdőív módosítása | A megrendelő igénye szerint tudja módosítani a már meglévő kérdőíveket |
+| Kitöltés | K7  | Kérdőív kitöltése | Az oldalra belépők alapadataik megadásával kitölthetik a kérdőívet |
+| Statisztika  | K8  | Statisztika | A beérkező eredményekből az oldal képes kimutatásokat készíteni. |
+
 ## Jelenlegi üzleti folyamatok modellje
 
 ## Igényelt üzleti folyamatok modellje
