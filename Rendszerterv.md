@@ -11,6 +11,8 @@
 
 ##  A rendszer célja 
 
+A megrendelő egy fejlesztő csapathoz fordult, hogy egy Google Formshoz hasonló weboldalt hozzanak létre. A weboldal lényege, hogy teljesen véletszerű kérdéseket tesz fel a felhasználónak és a válaszait eltárolja egy adatbázisban. Nincs bejelentkezéshez kötve a weboldal használata. A weboldal a begyűjtött válaszokból statisztikát készít a megrendelő számára.
+
 ## Projektterv
 
 ## Üzleti folyamatok modellje
