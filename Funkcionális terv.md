@@ -34,6 +34,8 @@ A világunk felgyorsult, az embereknek mindenre egyre kevesebb idejük van, ille
 
 ## Igényelt üzleti folyamatok modellje
 
+Megszámlálhatatlan sok weboldalon láthatunk esetleges kérdőíveket, vagy csak csekély értékeléseket, melyekre rendelés után kérhetnek meg minket, hogy értékeljük a terméküket. Cégünk korszerű, igényenyes felületet tud biztosítani minden ehhez hasonló igényre. Ezzel a befektetéssel elengedhetik a plusz kiadásokat, mint a kérdőívek termelése, logisztikája, postázása, valamint értelmezése. Ehelyett egy kényelmes, olcsóbb megoldást kínálunk, ahol automatikus visszajelzés statisztikát kaphat vissza az ügyfelünk, másodperceken belül.
+
 ## Használati esetek
 
 Admin: Az admin egy külön oldalon tud belépni. Számára megjelenik a felhasználók kezelése, kérdőívek kezelése,
