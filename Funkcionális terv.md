@@ -30,6 +30,8 @@ A megrendelő szeretné leváltani a korszerűtlen és a természetre igencsak k
 
 ## Jelenlegi üzleti folyamatok modellje
 
+A világunk felgyorsult, az embereknek mindenre egyre kevesebb idejük van, illetve egyre kevesebb időt fordítanak a jelentéktelenebb dolgokra. Ennek következtében az emberek fiatalabb generációja nem tartja annyira kényelmes, és gyors megoldásnak a kérdőívek postai úton visszaküldését. Ez pedig ügyfelünk legnagyobb problémája, hisz így jelentős adatmennyiségből marad ki. Ez az üzleti gyarapodást is hátráltatja, és a papírba, logisztikába, postázásba fektetett pénz csekély része térül vissza. A mai világban nyugodtan kijelenthetjük, a papír alapú kérdőívek elavultak, és ezt ügyfelünk felismerte és mielőbb szeretne váltani.
+
 ## Igényelt üzleti folyamatok modellje
 
 ## Használati esetek
