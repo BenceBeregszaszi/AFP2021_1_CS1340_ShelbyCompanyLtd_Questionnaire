@@ -17,7 +17,6 @@ class CreateKerdeseksTable extends Migration
             $table->increments('kerdes_id');
             $table->integer('kerdoiv_id')->unsigned();
             $table->string('kerdes_szovege');
-            $table->string('valasz_tipusa');
         });
     }
 

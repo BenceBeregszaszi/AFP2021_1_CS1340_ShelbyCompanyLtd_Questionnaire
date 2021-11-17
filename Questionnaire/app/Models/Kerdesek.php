@@ -11,9 +11,9 @@ class Kerdesek extends Model
 
     protected $table = 'kerdeseks';
 
-    protected $primaryKey = 'kerdoiv_id';
+    protected $primaryKey = 'kerdes_id';
     
-    protected $fillable = ['kerdoiv_nev'];
+    protected $fillable = ['kerdoiv_id','kerdes_szovege'];
 
     public $timestamps = false;
 }

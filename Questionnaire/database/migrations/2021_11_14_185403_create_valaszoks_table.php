@@ -14,9 +14,9 @@ class CreateValaszoksTable extends Migration
     public function up()
     {
         Schema::create('valaszoks', function (Blueprint $table) {
+            $table->increments('valaszok_id');
             $table->integer('kerdes_id');
-            $table->integer('valasz');
-            $table->integer('ertek');
+            $table->string('valasz');
             $table->integer('fiatalok');
             $table->integer('kozepkoruak');
             $table->integer('idosek');
