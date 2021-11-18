@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kerdoiv;
+use App\Models\Kerdesek;
+use App\Models\Valaszok;
 use Symfony\Component\Console\Question\Question;
 use Illuminate\Support\Facades\DB;
 
@@ -17,12 +19,13 @@ class SettingsController extends Controller
     public function index()
     {
         $questionnaires = Kerdoiv::all();
-        //dd($questions);
 
         return view('pages.settings',[
             'questionnaires' => $questionnaires
         ]);
     }
+
+   
 
     /**
      * Show the form for creating a new resource.
@@ -43,87 +46,61 @@ class SettingsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'question' => 'required',
-            'ans0' => 'required',
-            'ans1' => 'required'
+            'kerdoiv_nev' => 'required'
         ]);
 
-        $question = Questions::create([
-            'question' => $request ->input('question'),
-            'ans0' => $request -> input('ans0'),
-            'ans1' => $request -> input('ans1'),
-            'ans2' => $request -> input('ans2'),
-            'ans3' => $request -> input('ans3'),
+        $question = Kerdoiv::create([
+            'kerdoiv_nev' => $request ->input('kerdoiv_nev')
         ]);
-
-        return redirect('/settings');
+        $nev = $request ->input('kerdoiv_nev');
+        
+        $id = DB::getPdo()->lastInsertId();
+        return redirect('create/addquestions/'.$id);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-     {
-    //     $question = Questions::find($id);
-    //     dd($question);
-    //     return view('pages.edit')->with('question',$question);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function add($id)
     {
-        return view('pages.edit')->with('question',Questions::where('id', $id)->first());
+        $name = DB::table('kerdoivs')
+            ->select('kerdoiv_nev')
+            ->where('kerdoiv_id', '=', $id)->first();
+        $param = $name->kerdoiv_nev;
+        $count = DB::table('kerdeseks')->select('kerdes_id')->where('kerdoiv_id','=',$id)->count();
+        $url = '/create/addquestions/'.$id.'/store';
+        return view('pages.add')->with('id',$id)->with('name',$param )->with('url',$url)->with('dbszam',$count);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    
+    public function storeQuestions(Request $request)
     {
         $request->validate([
-            'question' => 'required|string',
-            'ans0' => 'required',
+            'kerdes_szovege' => 'required',
             'ans1' => 'required',
-            'correct' => 'required|integer',
-            'ans2' => 'nullable', //javításra szorul, nem adódik hozzá, ha két opciónk van.
-            'ans3' => 'required_with:ans2'
+            'ans2' => 'required',
+            'ans3' => 'required',
+            'ans4' => 'required',
+            'ans5' => 'required'
         ]);
 
-        Questions::where('id',$id)->update([
-            'question' => $request ->input('question'),
-            'ans0' => $request -> input('ans0'),
-            'ans1' => $request -> input('ans1'),
-            'ans2' => $request -> input('ans2'),
-            'ans3' => $request -> input('ans3'),
-            'correct' => $request -> input('correct')
+        $question = Kerdesek::create([
+            'kerdoiv_id' => $request ->input('kerdoiv_id'),
+            'kerdes_szovege' => $request ->input('kerdes_szovege')
         ]);
+        $id = DB::getPdo()->lastInsertId();
 
-        return redirect('/settings')->with('message','Sikeres szerkesztés!');
+        DB::insert('insert into valaszoks (kerdes_id, valasz, fiatalok, kozepkoruak, idosek, ferfi, no, egyeb) values (?, ?, ?, ?, ?, ?, ?, ?)', [$id, $request -> input('ans1'), 0,0,0,0,0,0]);
+        DB::insert('insert into valaszoks (kerdes_id, valasz, fiatalok, kozepkoruak, idosek, ferfi, no, egyeb) values (?, ?, ?, ?, ?, ?, ?, ?)', [$id, $request -> input('ans2'), 0,0,0,0,0,0]);
+        DB::insert('insert into valaszoks (kerdes_id, valasz, fiatalok, kozepkoruak, idosek, ferfi, no, egyeb) values (?, ?, ?, ?, ?, ?, ?, ?)', [$id, $request -> input('ans3'), 0,0,0,0,0,0]);
+        DB::insert('insert into valaszoks (kerdes_id, valasz, fiatalok, kozepkoruak, idosek, ferfi, no, egyeb) values (?, ?, ?, ?, ?, ?, ?, ?)', [$id, $request -> input('ans4'), 0,0,0,0,0,0]);
+        DB::insert('insert into valaszoks (kerdes_id, valasz, fiatalok, kozepkoruak, idosek, ferfi, no, egyeb) values (?, ?, ?, ?, ?, ?, ?, ?)', [$id, $request -> input('ans5'), 0,0,0,0,0,0]);
 
+        $id = $request ->input('kerdoiv_id');
+        return redirect('create/addquestions/'.$id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {   
-        $id = $request -> input('id');
-        DB::delete('delete from questions where id = ?',[$id]);
-        return redirect('/settings')->with('message','Sikeres törlés!');
-    }
+
 }
+    
+    
+        
+        
+        
+    
