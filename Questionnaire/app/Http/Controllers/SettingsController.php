@@ -181,6 +181,57 @@ class SettingsController extends Controller
         return redirect('/');
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $questionnaire = DB::table('kerdoivs')
+        ->select('*')
+        ->where('kerdoiv_id', '=', $id)->first();
+        $questionnaire_name = $questionnaire->kerdoiv_nev;
+        $questions = DB::table('kerdeseks')
+        ->select('*')
+        ->where('kerdoiv_id', '=', $id)->get();
+        return view('pages.edit')->with('questionnaire_name', $questionnaire_name)->with('questions',$questions)->with('id',$id);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update($id)
+    {   $question = DB::table('kerdeseks')
+        ->select('*')
+        ->where('kerdes_id', '=', $id)->first();
+        $question_name = $question->kerdes_szovege;
+        $questionnaire = DB::table('kerdeseks')
+        ->select('*')
+        ->where('kerdes_id', '=', $id)->first();
+        $questionnaire_id = $question->kerdoiv_id;
+        $answers = DB::table('valaszoks')
+        ->select('*')
+        ->where('kerdes_id', '=', $id)->get();
+        return view('pages.update')->with('question_name', $question_name)->with('answers',$answers)->with('id',$id)->with('questionnaireId',$questionnaire_id);
+    }
+
+    public function updateQuestions(Request $request,$id)
+    {   
+        $answers = DB::table('valaszoks')
+        ->select('*')
+        ->where('kerdes_id', '=', $id)->get();
+        foreach ($answers as $answer) {
+            $helyettesito = $request->input("szoveg".$answer->valaszok_id);
+            DB::table('valaszoks')->where('valaszok_id', $answer->valaszok_id)->update(array('valasz' => $helyettesito));
+        }
+        return redirect('/settings')->with('message','Sikeres módosítás!');
+    }
 
 }
     
