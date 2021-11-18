@@ -232,7 +232,24 @@ class SettingsController extends Controller
         }
         return redirect('/settings')->with('message','Sikeres módosítás!');
     }
-
+/**
+     * Remove the specified resource from storage.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyQuestion(Request $request)
+    {   
+        $id = $request -> input('hiddenid');
+        DB::delete('delete from kerdeseks where kerdes_id = ?',[$id]);
+        return redirect('/settings')->with('message','A kérdés törlése sikeresen megtörtént!');
+    }
+    public function destroyQuestionnaire(Request $request)
+    {   
+        $id = $request -> input('hiddenid');
+        DB::delete('delete from kerdoivs where kerdoiv_id = ?',[$id]);
+        return redirect('/settings')->with('message','A kérdőív törlése sikeresen megtörtént!');
+    }
 }
     
     
