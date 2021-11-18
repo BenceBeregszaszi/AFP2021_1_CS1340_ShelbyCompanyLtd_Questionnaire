@@ -25,6 +25,22 @@ Projektmunkások, felelősségek:
 ## Üzleti folyamatok modellje
 
 ## Követelmények
+ - Funkcionális követelmények
+   - Felhasználó (admin) bejelentkezési adatainak tárolása
+   - Felhasználói jogkörök kialakítása
+   - Kérdőívek adatainak tárolása
+     - Kérdések, azokhoz lehetséges válaszok
+   - Webes környezeten való stabil működés
+ - Nem funkcionális működés
+   - A bejelentkezés nélküli felhasználók ne férhessenek hozzá a kérdőívekhez és azok kezeléséhez
+   - Kitöltött kérdőívekről lekérdezhető az egyes statisztika
+     - ehhez csak az admin (egyetlen felhasználó) férhet hozzá
+   - A bejelentkezés nélküli felhasználó csak az admin által beállított kérdőívhez férhessen hozzá
+ - Törvényi előírások, szabályok
+   - A web felület szabványos eszközökkel készüljön, html/php/css
+   - Intuitív, átlátható rendszer
+   - GDPR szabályoknak való megfelelés
+
 
 ## Funkcionális terv
 
