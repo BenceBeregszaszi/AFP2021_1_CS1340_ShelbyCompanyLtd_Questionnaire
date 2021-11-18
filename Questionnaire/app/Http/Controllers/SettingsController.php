@@ -95,6 +95,91 @@ class SettingsController extends Controller
         $id = $request ->input('kerdoiv_id');
         return redirect('create/addquestions/'.$id);
     }
+    
+    public function sendResults(Request $request)
+    {
+        $eletkor = $request->input('eletkora');
+        $nem = $request->input('neme');
+        
+        $questionnaire = DB::table('kerdoivs')
+            ->select('*')
+            ->orderby('kerdoiv_id')->first();
+        $questionnaire_id = $questionnaire->kerdoiv_id;
+        $questions = DB::table('kerdeseks')
+            ->select('*')
+            ->where('kerdoiv_id', '=',  $questionnaire_id)->get();
+        foreach($questions as $question)
+        {
+            $valasz = $request->input('kerdes'.$question->kerdes_id);
+            $kivalasztott = DB::table('valaszoks')
+                    ->select('*')
+                    ->where([
+                        ['kerdes_id', '=', $question->kerdes_id],
+                        ['valasz', '=', $valasz]])
+                        ->first();
+            $ferfiakSzama = $kivalasztott->ferfi;
+            $nokSzama = $kivalasztott->no;
+            $egyebSzama = $kivalasztott->egyeb;
+            $fiatalokSzama = $kivalasztott->fiatalok;
+            $kozepkoruakSzama = $kivalasztott->kozepkoruak;
+            $idosekSzama = $kivalasztott->idosek;
+            if($nem == "Férfi")
+            {
+                    DB::table('valaszoks')->where([
+                        ['kerdes_id', '=', $question->kerdes_id],
+                        ['valasz', '=', $valasz]])
+                        ->update(
+                            ['ferfi' => $ferfiakSzama+1]
+                    );
+            }
+            else if($nem == "Nő")
+            {  
+                DB::table('valaszoks')->where([
+                        ['kerdes_id', '=', $question->kerdes_id],
+                        ['valasz', '=', $valasz]])
+                    ->update(
+                        ['no' => $nokSzama+1]
+                    );
+            }
+            else if($nem == "Egyéb")
+            {
+                DB::table('valaszoks')->where([
+                    ['kerdes_id', '=', $question->kerdes_id],
+                    ['valasz', '=', $valasz]])
+                ->update(
+                    ['egyeb' =>  $egyebSzama+1]
+                );
+            }
+            if($eletkor >= 0 and $eletkor <=25)
+            {                
+                DB::table('valaszoks')->where([
+                    ['kerdes_id', '=', $question->kerdes_id],
+                    ['valasz', '=', $valasz]])
+                    ->update(
+                        ['fiatalok' => $ferfiakSzama+1]
+                    );
+            }
+            else if($eletkor >= 26 and $eletkor <=55)
+            {
+                DB::table('valaszoks')->where([
+                    ['kerdes_id', '=', $question->kerdes_id],
+                    ['valasz', '=', $valasz]])
+                    ->update(
+                        ['kozepkoruak' => $kozepkoruakSzama+1]
+                    );
+            }
+            else
+            {
+                DB::table('valaszoks')->where([
+                    ['kerdes_id', '=', $question->kerdes_id],
+                    ['valasz', '=', $valasz]])
+                    ->update(
+                        ['idosek' => $idosekSzama+1]
+                    ); 
+            }
+        }
+        return redirect('/');
+    }
 
 
 }
