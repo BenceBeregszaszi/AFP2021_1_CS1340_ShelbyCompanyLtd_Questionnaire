@@ -71,3 +71,5 @@ Autentikáció - Hitelesítés. (A projekt esetében: Ne kelljen külön felhasz
 Reszponzív: A weboldal méretezése automatikusan igazodik a használt eszközhöz.
 
 Framework: Magyarul keretrendszer. Jelen esetben olyan eszköz, amely segíti a projekt hatékony fejlesztését.
+
+Hivatkozás: Itt: Az elérési út, amin keresztül megnyílik egy kérdőív. Egy link.
