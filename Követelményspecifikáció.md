@@ -45,6 +45,11 @@ Mivel a világunkban minden gyorsul, egyre kevesebb van ideje bármire is az emb
 
 
 ## A rendszerre vonatkozó szabályok
+A web felület szabványos eszközökkel készüljön
+Laravel framework - html/php/css
+A felület legyen intuitív, letisztult design
+A használathoz ne legyen szükséges autentikáció.
+Külső fájlból is importálható kérdőív/témaköri kérdések.
 
 ## Követelménylista
 
