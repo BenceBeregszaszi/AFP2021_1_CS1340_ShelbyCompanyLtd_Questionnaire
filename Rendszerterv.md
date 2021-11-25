@@ -24,6 +24,8 @@ Projektmunkások, felelősségek:
 
 ## Üzleti folyamatok modellje
 
+![https://imgur.com/a/6tHYARx](https://imgur.com/a/6tHYARx)
+
 ## Követelmények
  - Funkcionális követelmények
    - Felhasználó (admin) bejelentkezési adatainak tárolása
