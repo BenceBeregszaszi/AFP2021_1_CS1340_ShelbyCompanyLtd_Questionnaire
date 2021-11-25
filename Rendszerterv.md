@@ -43,6 +43,39 @@ Projektmunkások, felelősségek:
 
 
 ## Funkcionális terv
+ - Rendszerszereplők
+    - Admin
+    - Vendég
+ - Rendszerhasználati esetek és lefutásaik:
+    - ADMIN:
+        - Rendszer feletti korlátlan hozzáférés
+        - Kérdőívek létrehozása
+        - Kérdések (és azokhoz tartozó válaszlehetőségek) létrehozása
+        - Kérdőívek szerkesztése
+        - Kérdés szövegének megváltoztatása
+        - Válaszok módosítása
+        - Az egyes kérdőívekre vonatkozó statisztikák megjelenítése
+        - Kérdőívek kitöltési URL-jének lekérése/másolása
+    - Vendég
+        - Kérdőívhez való hozzáférés hivatkozáson keresztül
+        - Kérdőív statisztikához szükséges alapadatok megadása
+        - Kérdőív kitöltése
+ - Menü-architektúrák:
+    - BEJELENTKEZÉS:
+        - Admin számára autentikációs lehetőség
+    - BEÁLLÍTÁSOK:
+        - Kérdőívek kezelésére szolgáló felület
+        - Kérdőívek listázása
+        - Kérdőívek szerkesztése
+        - Kérdőívek URL-jének lekérése
+    - KÉRDŐÍV:
+        - Alapadatok megadása
+        - Kérdések megválaszolása
+        - Kérdőív elküldése
+    - Regisztráció
+        - Felhasználók regisztrációws felülete a rendszerbe, így nem kell minden esetben megadni az alapadatokat
+    - Kijelentkezés
+
 
 ## Fizikai környezet
 
