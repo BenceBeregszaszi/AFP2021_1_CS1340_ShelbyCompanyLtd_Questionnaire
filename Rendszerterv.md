@@ -110,6 +110,7 @@ Frontend:
 -TailWind CSS
 
 ## Adatbázis terv
+![https://i.imgur.com/GYhCAzW.png](https://i.imgur.com/GYhCAzW.png)
 
 ## Implementációs terv
 A felület HTML, JS, és PHP nyelven készül.
