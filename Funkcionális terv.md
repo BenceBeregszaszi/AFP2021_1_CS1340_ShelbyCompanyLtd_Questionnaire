@@ -61,8 +61,10 @@ Felhasználó: Ahogy felcsatlakozik az oldalra, megjelennek számára azok a ké
 ![Kérdőív főoldal, admin felhasználóba bejelentkezve](https://i.imgur.com/qlN4DWo.png)
 
 ## Forgatókönyv
+***Admin szemszögéből***: Bejelentkezés után hozzáférése lesz a kérdőívek kezeléséhez. Kilistázhatja, módosíthatja őket - kérdőív nevét, kérdések szövegeit illetve azok válaszainak változtatásának lehetősége. További lehetősége van az adminnak kérdőíveket, kérdéseket törölni a rendszerből. Az egyes kérdőíveknek megtekinthetőek a statisztikai elemei, amit az eltárolt alapadatoknak megfelelően jelenítünk meg. A kérdőívek kitöltésére szolgáló hivatkozások másolása, ami segítségével elérjük a kérdőíveket.
 
-## Funkció - követelmény megfeleltetés
+***Vendég szemszögéből***: Alapadatok megadásával és a válaszok jelölésével elküldheti a kiválasztott kérdőívhez tartozó értékeket, amiket adatbázisban tárolunk. 
+
 
 ## Fogalomszótár
 
@@ -71,5 +73,3 @@ Autentikáció - Hitelesítés. (A projekt esetében: Ne kelljen külön felhasz
 Reszponzív: A weboldal méretezése automatikusan igazodik a használt eszközhöz.
 
 Framework: Magyarul keretrendszer. Jelen esetben olyan eszköz, amely segíti a projekt hatékony fejlesztését.
-
-Hivatkozás: Itt: Az elérési út, amin keresztül megnyílik egy kérdőív. Egy link.
