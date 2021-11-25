@@ -95,6 +95,12 @@ Projektmunkások, felelősségek:
 ## Adatbázis terv
 
 ## Implementációs terv
+A felület HTML, JS, és PHP nyelven készül.
+Az oldalakat és azok vezérlését végző fájlokat a framework által karbantartott fájl rendszerezés szerint hoztuk létre. 
+A szabványos fájlkezelés végett átláthatóbb és egyszerűbb lesz 
+a későbbi fejlesztési folyamatok során megérteni a rendszer felépítését.
+A frontend elkészítése során CSS, BootStrap illetve Tailwind CSS használatára került sor, 
+ezek felgyorsították a felület szerkesztésének folyamatát.
 
 ## Tesztterv
 A teszteléseket egy külön jegyzőkönyvben fogjuk majd vezetni és folyamatosan jegyzetelni a fejlesztés során.
