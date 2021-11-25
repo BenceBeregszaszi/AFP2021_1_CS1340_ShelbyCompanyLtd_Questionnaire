@@ -24,7 +24,7 @@ Projektmunkások, felelősségek:
 
 ## Üzleti folyamatok modellje
 
-![https://imgur.com/a/6tHYARx](https://imgur.com/a/6tHYARx)
+![https://i.imgur.com/TTElsIx.jpeg](https://i.imgur.com/TTElsIx.jpeg)
 
 ## Követelmények
  - Funkcionális követelmények
