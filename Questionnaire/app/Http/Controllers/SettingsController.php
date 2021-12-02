@@ -250,6 +250,24 @@ class SettingsController extends Controller
         DB::delete('delete from kerdoivs where kerdoiv_id = ?',[$id]);
         return redirect('/settings')->with('message','A kérdőív törlése sikeresen megtörtént!');
     }
+    
+    public function changeNames(Request $request)
+    {
+        $id = $request->idToChange;
+        $tipus = $request->whatToChange;
+        $ujNev = $request->ujNev;
+        if($tipus == 'kerdoiv')
+        {
+            DB::table('kerdoivs')->where('kerdoiv_id', $id)->update(array('kerdoiv_nev' => $ujNev));
+            return redirect('/settings/'.$id.'/questions');
+        }
+        else
+        {
+            DB::table('kerdeseks')->where('kerdes_id', $id)->update(array('kerdes_szovege' => $ujNev));
+            return redirect('/settings/'.$id.'/update');
+        }
+        
+    }
 }
     
     
