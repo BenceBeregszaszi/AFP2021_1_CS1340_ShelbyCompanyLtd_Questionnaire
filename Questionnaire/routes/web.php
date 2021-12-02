@@ -28,4 +28,7 @@ Route::post('/delete/question', [SettingsController::class, 'destroyQuestion']);
 
 Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
 
+
+Route::post('/settings/change', [SettingsController::class, 'changeNames']);
+
 Auth::routes();
