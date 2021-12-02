@@ -7,10 +7,22 @@
 @if (Auth::check())
 
 <div class="m-auto w-4/8 py-5">  
-    <div class="text-center">
+    <div class="text-center" id="cim">
             <h1 class="text-3xl font-light">
-                Kérdés: <b>{{ $question_name }}</b>
+                <b>{{ $question->kerdes_szovege }}</b> kérdés válaszai
             </h1>
+            <button id="changerButton">Változtat</button>
+    </div>
+    <h2 class="text-center" style="color: red;" id ="response"></h2>
+    <div class="text-center" id="cimChanger" style="display: none">
+      <form action="/settings/change" method="POST">
+        @csrf
+        <input type="hidden" value="{{ $question->kerdes_id }}" name="idToChange" id = "hiddenQuestionId">
+        <input type="hidden" value="kerdes" name="whatToChange">
+        <input type="text" value = "{{ $question->kerdes_szovege }}" name="ujNev" style="font-size: 32px">
+        <button type="submit" class="flex justify-center bg-green-600 rounded-md w-1/6 m-auto py-2 px-2 text-gray-100 text-xl font-light transition hover:bg-green-500">Frissít</button>
+      </form>
+  
     </div>
 </div>
 
