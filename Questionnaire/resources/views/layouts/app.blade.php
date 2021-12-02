@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{ asset('js/controllers.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     
