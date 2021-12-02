@@ -101,22 +101,26 @@ class SettingsController extends Controller
         $eletkor = $request->input('eletkora');
         $nem = $request->input('neme');
         
-        $questionnaire = DB::table('kerdoivs')
-            ->select('*')
-            ->orderby('kerdoiv_id')->first();
-        $questionnaire_id = $questionnaire->kerdoiv_id;
+        
+        $questionnaire_id = $request->input('questionnaireId');
+
         $questions = DB::table('kerdeseks')
             ->select('*')
             ->where('kerdoiv_id', '=',  $questionnaire_id)->get();
+
+
         foreach($questions as $question)
         {
+            var_dump($question);
             $valasz = $request->input('kerdes'.$question->kerdes_id);
+            var_dump($valasz);
             $kivalasztott = DB::table('valaszoks')
                     ->select('*')
                     ->where([
                         ['kerdes_id', '=', $question->kerdes_id],
                         ['valasz', '=', $valasz]])
                         ->first();
+            var_dump($kivalasztott);
             $ferfiakSzama = $kivalasztott->ferfi;
             $nokSzama = $kivalasztott->no;
             $egyebSzama = $kivalasztott->egyeb;
