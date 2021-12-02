@@ -11,7 +11,7 @@
             <h1 class="text-3xl font-light">
                 <b>{{ $questionnaire->kerdoiv_nev }}</b> kérdőív kérdései
             </h1>
-            <button id="changerButton">Változtat</button>
+            <button class="mt-5 px-3 py-2 text-white font-light text-xl rounded-lg shadow-lg bg-green-600 transition hover:bg-green-400" id="changerButton">Kerdőív nevének módosítása</button>
     </div>
     <div class="text-center" id="cimChanger" style="display: none">
       <form action="/settings/change" method="POST">
@@ -19,13 +19,11 @@
         <input type="hidden" value="{{ $questionnaire->kerdoiv_id }}" name="idToChange">
         <input type="hidden" value="kerdoiv" name="whatToChange">
         <input type="text" value = "{{ $questionnaire->kerdoiv_nev }}" name="ujNev" style="font-size: 32px">
-        <button type="submit" class="flex justify-center bg-green-600 rounded-md w-1/6 m-auto py-2 px-2 text-gray-100 text-xl font-light transition hover:bg-green-500">Frissít</button>
+        <button type="submit" class="flex justify-center mt-5 bg-green-600 rounded-md w-1/6 m-auto py-2 px-2 text-gray-100 text-xl font-light transition hover:bg-green-500">Frissít</button>
       </form>
     </div>
+
 </div>
-
-
-
 
 <div class="flex justify-center">
   <div class="w-1/2">
@@ -41,7 +39,7 @@
                 
                 @forelse ($questions as $question)
 
-                <tr class="pb-10 font-light">
+                <tr class="pb-10 font-light" id="question{{ $question->kerdes_id }}">
                   <td>
                     <ul>
                       <li class="text-2xl">{{ $question->kerdes_szovege }}</li> 
@@ -56,8 +54,8 @@
                     <form action="/delete/question" method="POST">
                         @csrf
                         <input type="hidden" name="hiddenid" value="{{ $question->kerdes_id }}">
-                        <button class="p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"   name="id" type="submit" value="{{ $question->kerdes_id }}">Törlés</button>
-                                            
+                        <button class="deleteBtn p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"
+                        data-id="{{ $question->kerdes_id }}" data-type="question"  name="id" type="button">Törlés</button>               
                      </form>
                  </td>
                 </tr>
