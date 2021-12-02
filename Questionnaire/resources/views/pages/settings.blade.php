@@ -7,28 +7,28 @@
   @if (Auth::check())
 
   @if (Session::has('message'))
-    <div class="flex justify-center font-sans font-light text-center">
+    <div class="flex justify-center font-sans text-center">
       <div class="w-full md:w-1/2 mb-10">                     
-        <div class="px-5 text-2xl">{{ Session::get('message') }}</div>
+        <div class="px-5 text-2xlfont-light">{{ Session::get('message') }}</div>
       </div>
     </div>
   @endif
   
   <div class="p-5 text-center w-1/2 m-auto">
-    <a href="{{ asset('create') }}" class="text-2xl text-black">
+    <a href="/create" class="text-2xl text-black">
           <div class="bg-green-600 shadow-lg text-white font-light rounded-lg py-3 px-6 transition hover:bg-green-500 hover:text-white">
            +  Új kérdőív
           </div>
     </a>
   </div>
-  
+    
     <div class="flex justify-center">
         <div class="w-1/2">
             <label for="editQuestions" class="text-3xl font-light mb-5">Kérdőívek</label>
             <div class="bg-gray-100 rounded-lg mt-5 shadow-lg">
                 <table class="m-5 p-2">
                     <thead class="text-center">
-                        <td class="w-5/6 pt-4"></td>
+                        <td class="w-5/6 pt-4"></td> 
                         <td class="w-min pt-4"></td>
                         <td class="w-min pt-4"></td>
                     </thead>
@@ -36,28 +36,34 @@
                       
                       @forelse ($questionnaires as $questionnaire)
 
-                      <tr class="pb-10 font-light">
+                      <tr id="questionnaire{{ $questionnaire->kerdoiv_id }}"class="pb-10 font-light">
                         <td>
                           <ul>
-                            <li class="text-2xl">{{ $questionnaire->kerdoiv_nev }}</li> 
+                            <a href = "/kitolt/{{ $questionnaire->kerdoiv_id }}">
+                              <li class="text-2xl">{{ $questionnaire->kerdoiv_nev }}</li> 
+                            </a>
                           </ul>
                           <br>
                            <hr class="pt-5">
                         </td>
+                        <td class="p-2 m-1/3">
+                          <button  class="copyBtn p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"
+                          name="linkCopier" type="button" value="http://127.0.0.1:8000/kitolt/{{ $questionnaire->kerdoiv_id }}">Link</button>  
+                        
+                        </td>
                         <td class="p-2 m-1/3"><a href="/settings/{{ $questionnaire->kerdoiv_id }}/edit">
-                         <p class="p-2 text-center text-lg rounded-md bg-yellow-300 transition hover:bg-yellow-400"> Módosítás </p>
-                        </a>
+                          <p class="p-2 text-center text-lg rounded-md bg-yellow-300 transition hover:bg-yellow-400"> Módosítás </p>
+                         </a>
+                        
                         <td class="p-2 m-1/3 text-white">
-                          <form action="/delete/questionnaire" method="POST">
-                              @csrf
-                              <input type="hidden" name="hiddenid" value="{{ $questionnaire->kerdoiv_id }}">
-                              <button class="p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"
-                                 name="id" type="submit" value="{{ $questionnaire -> id }}">Törlés</button>                   
-                           </form>
+                          <input type="hidden" name="hiddenid" value="{{ $questionnaire->kerdoiv_id }}">
+                          <button class="deleteBtn p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"
+                          data-id="{{ $questionnaire->kerdoiv_id }}" data-type="questionnaire"  name="id" type="button">Törlés</button> 
+                          
                        </td>
                       </tr>
                       @empty
-                        <p class="text-center font-light text-3xl">Nincs kérdőív</p>
+                        Nincs kérdés
                       </div>
                       @endforelse
                     </tbody>
