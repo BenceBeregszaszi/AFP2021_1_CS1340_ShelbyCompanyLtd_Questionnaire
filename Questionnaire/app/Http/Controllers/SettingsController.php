@@ -272,6 +272,16 @@ class SettingsController extends Controller
         }
         
     }
+    
+     public function getAnswers(){
+        if(isset($_GET['kerdesId']))
+        {
+            $valaszok = DB::table('valaszoks')
+                ->select('*')
+                ->where('kerdes_id', '=', $_GET['kerdesId'])->get();
+            return response()->json(['valaszok'=>$valaszok]);
+        }
+    }
 }
     
     
