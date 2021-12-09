@@ -27,7 +27,7 @@ Route::post('/delete/questionnaire', [SettingsController::class, 'destroyQuestio
 Route::post('/delete/question', [SettingsController::class, 'destroyQuestion']);
 
 Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
-
+Route::get('/getAnswers', [SettingsController::class, 'getAnswers']);
 
 Route::post('/settings/change', [SettingsController::class, 'changeNames']);
 
