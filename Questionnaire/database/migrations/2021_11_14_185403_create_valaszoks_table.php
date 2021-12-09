@@ -15,7 +15,7 @@ class CreateValaszoksTable extends Migration
     {
         Schema::create('valaszoks', function (Blueprint $table) {
             $table->increments('valaszok_id');
-            $table->integer('kerdes_id');
+            $table->integer('kerdes_id')->unsigned();
             $table->string('valasz');
             $table->integer('fiatalok');
             $table->integer('kozepkoruak');
@@ -23,6 +23,8 @@ class CreateValaszoksTable extends Migration
             $table->integer('ferfi');
             $table->integer('no');
             $table->integer('egyeb');
+            $table->foreign('kerdes_id')->references('kerdes_id')->on('kerdeseks')->onUpdate('cascade')->onDelete('cascade');
+
         });
     }
 
