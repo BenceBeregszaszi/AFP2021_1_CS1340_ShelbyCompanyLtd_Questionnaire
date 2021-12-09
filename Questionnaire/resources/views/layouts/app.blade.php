@@ -30,7 +30,7 @@
 
                     @guest
                     @else
-                    <a href="{{ route('settings') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-md transition hover:text-white hover:bg-yellow-400">{{ __('Statisztika') }}</a>
+                    <a href="{{ route('statistics') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-md transition hover:text-white hover:bg-yellow-400">{{ __('Statisztika') }}</a>
                         <a href="{{ route('settings') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-md transition hover:text-white hover:bg-yellow-400">{{ __('Beállítások') }}</a>
                         <a href="{{ route('logout') }}"
                            class="text-md lg:text-2xl font-light text-black px-3 py-2 rounded-md font-sans transition hover:text-white hover:bg-red-500"
