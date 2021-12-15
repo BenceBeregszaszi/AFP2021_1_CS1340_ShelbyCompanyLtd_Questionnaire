@@ -55,9 +55,13 @@ Felhasználó: Ahogy felcsatlakozik az oldalra, megjelennek számára azok a ké
 ## Képernyő tervek
 
 - Beállítások főmenü
+
+
 ![Beállítások főmenü](https://i.imgur.com/VrUDdz5.png)
 
 - Kérdőív főoldal, navigációs menü admin szemszögből
+
+
 ![Kérdőív főoldal, admin felhasználóba bejelentkezve](https://i.imgur.com/qlN4DWo.png)
 
 ## Forgatókönyv
