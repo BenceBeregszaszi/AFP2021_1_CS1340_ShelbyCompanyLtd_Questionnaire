@@ -17,7 +17,7 @@
                         @csrf
                         
                         <div class="row space-x-10">
-                            <div class="colun">
+                            <div class="column">
                                 <label for="neme" class="text-2xl font-medium">Neme:</label><br>
                                 <input type="radio" name="neme" id="ferfi" value="Férfi">
                                 <label class="pl-2 text-xl" for="ferfi">Férfi</label><br>
