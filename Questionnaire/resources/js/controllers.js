@@ -29,6 +29,48 @@ $(document).ready(function(){
     });
     
   })
+    
+    
+    //Törléseket végző function-ök hívása a paramétereknek megfelelően
+  $(".deleteBtn").click(function(){
+    const params = $(this).data();
+    const btnId = params["id"];   //törlendő kérdőív/kérdés ID-je
+    const btnType = params["type"]; //megmutatja, hogy kérdőívet vagy kérdést kell törölni
+
+    if(btnType === "questionnaire")
+    {
+      var token = $("meta[name='csrf-token']").attr("content");
+      $.ajax({
+        url: '/delete/questionnaire',   //kérdőív törlését végző route
+        type: 'POST',
+        data: {
+          'questionnaireId' : btnId,
+          '_token': token,
+          },
+        success: function(response)
+        {
+          $("#questionnaire"+btnId).remove();     //megjelenítésben lévő kérdőív sorát kitöröljük a táblázatból, ha sikeres
+        }
+      });
+    }
+    else{
+      var token = $("meta[name='csrf-token']").attr("content");
+      $.ajax({
+      url: '/delete/question',    //kérdés törlését végző route
+      type: 'POST',
+      data: {
+        'questionId' : btnId,
+        '_token': token,
+        },
+      success: function(response)
+      {
+        $("#question"+btnId).remove();    //megjelenítésben lévő kérdés sorát kitöröljük a táblázatból, ha sikeres
+      }
+    });
+    }
+    return false;
+  })
+    
   //Kérdőívek illetve kérdések szövegének módosítására szolgáló megjelenítés
   $("#changerButton").click(function(){
     $("#cim").hide();
