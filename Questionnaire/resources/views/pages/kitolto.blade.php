@@ -8,15 +8,15 @@
 
         <div class="flex justify-center @if ($numberOfQuestionnaire < 1) w-full @endif">
             
-            <div class="shadow-lg font-light bg-gray-100 p-5 rounded-lg content-center px-5">
+            <div class="shadow-lg font-light bg-gray-100 p-7 rounded-lg content-center px-10"> <!--width 3 out of 4, background white, padding 6, rounded edges-->
                 @if ($numberOfQuestionnaire < 1)
-                    <p class="w-full text-lg lg:text-3xl text-center">Jelenleg nincs kérdés az adatbázisban!</p>
+                    <p class="w-full p-5 text-lg lg:text-3xl text-center">Jelenleg nincs kérdés az adatbázisban!</p>
                 @else
                     <p class="text-6xl text-center font-bold">{{ $questionnaire->kerdoiv_nev }}</p>
-                    <form action={{ asset('send') }} method="POST" class="md:px-10 px-2 py-5 bg-gray-100 rounded-lg my-5">
+                    <form action={{ asset('send') }} method="POST" class="px-10 py-5 bg-gray-100 rounded-lg my-5">
                         @csrf
-                        
-                        <div class="row space-x-10">
+                        <input type="hidden" name ="questionnaireId" value="{{ $questionnaire->kerdoiv_id }}"/>
+                        <div class="row">
                             <div class="column">
                                 <label for="neme" class="text-2xl font-medium">Neme:</label><br>
                                 <input type="radio" name="neme" id="ferfi" value="Férfi">
@@ -34,8 +34,9 @@
                             </div>
                         </div>
                                     
+                        <br>
                         <hr class="pt-5">
-
+                        <br>
                         @foreach ($questions as $question)
                             <div class="mb-5">
                                 <p class="text-2xl mb-3 font-medium">{{ $question->kerdes_szovege }}</p>
