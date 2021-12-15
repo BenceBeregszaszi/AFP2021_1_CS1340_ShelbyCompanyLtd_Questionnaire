@@ -1,6 +1,35 @@
 const { random } = require("lodash");
 
 $(document).ready(function(){
+   $("#ButtonUpdate").click(function(){
+    const answerIds = [];
+    const answers = [];
+    let inputs = $(".InputUpdate");
+    for(let i = 0; i < inputs.length; i++){
+      answerIds.push($(inputs[i]).data()['id']);
+      answers.push($(inputs[i]).val());
+    }
+    let token = $("meta[name='csrf-token']").attr("content");
+    $.ajax({
+    url: '/settings/updateQuestions',    //kérdés szövegeinek frissítését végző route
+    type: 'POST',
+    data: {
+      'answerIds' : answerIds,        //átadjuk neki a válaszok ID-jeit és azok szövegeit
+      'answers' : answers,
+      '_token': token,
+    },
+    success: function(response)
+    {
+      $('#response').text(response.success+" Visszalépés a Beállítások oldalra 2 sec múlva...");
+      setTimeout('location.assign("http://127.0.0.1:8000/settings")', 2000);
+    },
+    error: function(resopone)
+    {
+      $('#response').text(response.error);
+    }
+    });
+    
+  }) 
     
   $("#getRandomQuestionnaire").click(function(){
     
