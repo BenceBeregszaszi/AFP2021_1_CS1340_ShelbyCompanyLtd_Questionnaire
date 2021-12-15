@@ -11,7 +11,7 @@
             <h1 class="text-3xl font-light">
                 <b>{{ $questionnaire->kerdoiv_nev }}</b> kérdőív kérdései
             </h1>
-            <button class="mt-5 px-3 py-2 text-white font-light text-xl rounded-lg shadow-lg bg-green-600 transition hover:bg-green-400" id="changerButton">Kerdőív nevének módosítása</button>
+            <button id="changerButton">Változtat</button>
     </div>
     <div class="text-center" id="cimChanger" style="display: none">
       <form action="/settings/change" method="POST">
@@ -19,7 +19,7 @@
         <input type="hidden" value="{{ $questionnaire->kerdoiv_id }}" name="idToChange">
         <input type="hidden" value="kerdoiv" name="whatToChange">
         <input type="text" value = "{{ $questionnaire->kerdoiv_nev }}" name="ujNev" style="font-size: 32px">
-        <button type="submit" class="flex justify-center mt-5 bg-green-600 rounded-md w-1/6 m-auto py-2 px-2 text-gray-100 text-xl font-light transition hover:bg-green-500">Frissít</button>
+        <button type="submit" class="flex justify-center bg-green-600 rounded-md w-1/6 m-auto py-2 px-2 text-gray-100 text-xl font-light transition hover:bg-green-500">Frissít</button>
       </form>
     </div>
 
