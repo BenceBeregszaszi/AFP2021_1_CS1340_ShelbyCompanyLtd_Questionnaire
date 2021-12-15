@@ -196,11 +196,10 @@ class SettingsController extends Controller
         $questionnaire = DB::table('kerdoivs')
         ->select('*')
         ->where('kerdoiv_id', '=', $id)->first();
-        $questionnaire_name = $questionnaire->kerdoiv_nev;
         $questions = DB::table('kerdeseks')
         ->select('*')
         ->where('kerdoiv_id', '=', $id)->get();
-        return view('pages.edit')->with('questionnaire_name', $questionnaire_name)->with('questions',$questions)->with('id',$id);
+        return view('pages.edit')->with('questionnaire', $questionnaire)->with('questions',$questions)->with('id',$id);
     }
 
     /**
