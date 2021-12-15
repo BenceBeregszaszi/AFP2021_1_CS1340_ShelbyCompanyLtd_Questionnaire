@@ -57,4 +57,6 @@ esztétikailag is megfelelő a weboldal.
 
 Átadásra készen áll a megrendelőnek.
 
+Tesztelést végezte és írta: Nagy Péter Axel 
+
 Befejezve: 2021.12.15 18:33:24 
