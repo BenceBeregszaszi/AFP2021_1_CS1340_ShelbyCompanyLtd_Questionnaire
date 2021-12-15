@@ -282,6 +282,11 @@ class SettingsController extends Controller
             return response()->json(['valaszok'=>$valaszok]);
         }
     }
+    public function getQuestionnaires(){
+        $kerdoivek = DB::table('kerdoivs')
+            ->select('*')->get();
+        return response()->json(['kerdoivek'=>$kerdoivek]);
+    }
 }
     
     
