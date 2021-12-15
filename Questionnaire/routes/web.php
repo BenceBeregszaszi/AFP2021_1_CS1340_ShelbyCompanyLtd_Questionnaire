@@ -20,7 +20,7 @@ Route::get('/create/addquestions/{id}', [SettingsController::class, 'add']);
 Route::post('/create/addquestions/{id}/store', [SettingsController::class, 'storeQuestions']);
 
 Route::get('/settings/{id}/update', [SettingsController::class, 'update']);
-Route::post('/settings/{id}/update/store', [SettingsController::class, 'updateQuestions']);
+Route::post('/settings/updateQuestions', [SettingsController::class, 'updateQuestions']);
 
 
 Route::post('/delete/questionnaire', [SettingsController::class, 'destroyQuestionnaire']);
