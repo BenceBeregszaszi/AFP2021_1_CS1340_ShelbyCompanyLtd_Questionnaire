@@ -35,7 +35,7 @@
 
 <div class="p-5 text-center w-1/2 m-auto">
   <a href="{{ asset('settings') }}" class="text-2xl text-black">
-        <div class="rounded-md py-3 px-6 transition hover:bg-gray-400">
+        <div class="rounded-lg py-3 px-6 transition hover:bg-gray-400">
          Befejezés
         </div>
   </a>
