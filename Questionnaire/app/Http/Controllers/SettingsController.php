@@ -243,9 +243,12 @@ class SettingsController extends Controller
      */
     public function destroyQuestion(Request $request)
     {   
-        $id = $request -> input('hiddenid');
-        DB::delete('delete from kerdeseks where kerdes_id = ?',[$id]);
-        return redirect('/settings')->with('message','A kérdés törlése sikeresen megtörtént!');
+         if(isset($_POST['questionnaireId']))
+        {
+            $id = $_POST['questionnaireId'];
+            DB::delete('delete from kerdoivs where kerdoiv_id = ?',[$id]);
+        }
+        return response()->json(['success'=>'Kérdés sikeresen törölve!']);
     }
     public function destroyQuestionnaire(Request $request)
     {   
