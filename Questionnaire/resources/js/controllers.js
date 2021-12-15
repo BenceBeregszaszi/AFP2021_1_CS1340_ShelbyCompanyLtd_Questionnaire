@@ -1,7 +1,34 @@
 const { random } = require("lodash");
 
 $(document).ready(function(){
-  
+    
+  $("#getRandomQuestionnaire").click(function(){
+    
+    let token = $("meta[name='csrf-token']").attr("content");
+    $.ajax({
+    url: '/getQuestionnaires',    //kérdés szövegeinek frissítését végző route
+    type: 'GET',
+    data: {
+      '_token': token,
+    },
+    success: function(response)
+    {
+      let kerdoivIdArr = [];
+      for(let i = 0; i < response.kerdoivek.length; i++)
+      {
+        kerdoivIdArr.push(response.kerdoivek[i]['kerdoiv_id']);
+      }
+      let randNum =  response.kerdoivek[getRndInt(0,response.kerdoivek.length)]['kerdoiv_id'];
+      let url = "http://127.0.0.1:8000/kitolt/"+randNum;
+      window.location.href = url; 
+   },
+    error: function(resopone)
+    {
+      $('#response').text(response.error);
+    }
+    });
+    
+  })
   //Kérdőívek illetve kérdések szövegének módosítására szolgáló megjelenítés
   $("#changerButton").click(function(){
     $("#cim").hide();
