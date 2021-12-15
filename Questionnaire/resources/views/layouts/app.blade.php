@@ -35,10 +35,10 @@
 
                     @guest
                     @else
-                    <a href="{{ route('statistics') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-md transition hover:text-white hover:bg-yellow-400">{{ __('Statisztika') }}</a>
-                        <a href="{{ route('settings') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-md transition hover:text-white hover:bg-yellow-400">{{ __('Beállítások') }}</a>
+                    <a href="{{ route('statistics') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-lg transition hover:text-white hover:bg-yellow-400">{{ __('Statisztika') }}</a>
+                        <a href="{{ route('settings') }}" class="text-md lg:text-2xl font-light font-sans text-black px-2 py-3 rounded-lg transition hover:text-white hover:bg-yellow-400">{{ __('Beállítások') }}</a>
                         <a href="{{ route('logout') }}"
-                           class="text-md lg:text-2xl font-light text-black px-3 py-2 rounded-md font-sans transition hover:text-white hover:bg-red-500"
+                           class="text-md lg:text-2xl font-light text-black px-3 py-2 rounded-lg font-sans transition hover:text-white hover:bg-red-500"
                            onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Kijelentkezés') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
@@ -48,7 +48,7 @@
                     
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
-                        <a class="text-md lg:text-2xl font-sans font-light text-black px-3 py-2 rounded-md transition hover:text-white hover:bg-blue-500" href="{{ route('login') }}">{{ __('Bejelentkezés') }}</a>  
+                        <a class="text-md lg:text-2xl font-sans font-light text-black px-3 py-2 rounded-lg transition hover:text-white hover:bg-blue-500" href="{{ route('login') }}">{{ __('Bejelentkezés') }}</a>  
                     @endguest
                 </nav>
             </div>
