@@ -63,5 +63,6 @@ class PagesController extends Controller
     public function index() {
         $numberOfQuestionnaire = DB::table('kerdoivs')->count('kerdoiv_id');
         return view('pages.index')->with('numberOfQuestionnaire', $numberOfQuestionnaire);
+    }
 }
         
