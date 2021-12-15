@@ -29,6 +29,7 @@ Route::post('/delete/question', [SettingsController::class, 'destroyQuestion']);
 Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
 Route::get('/getAnswers', [SettingsController::class, 'getAnswers']);
 Route::get('/statistics', [PagesController::class, 'charts'])->name('statistics');
+Route::get('/kitolt/{id}', [PagesController::class, 'kitolt']);
 
 Route::post('/settings/change', [SettingsController::class, 'changeNames']);
 
