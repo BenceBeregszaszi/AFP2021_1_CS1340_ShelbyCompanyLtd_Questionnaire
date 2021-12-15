@@ -213,7 +213,6 @@ class SettingsController extends Controller
     {   $question = DB::table('kerdeseks')
         ->select('*')
         ->where('kerdes_id', '=', $id)->first();
-        $question_name = $question->kerdes_szovege;
         $questionnaire = DB::table('kerdeseks')
         ->select('*')
         ->where('kerdes_id', '=', $id)->first();
@@ -221,7 +220,7 @@ class SettingsController extends Controller
         $answers = DB::table('valaszoks')
         ->select('*')
         ->where('kerdes_id', '=', $id)->get();
-        return view('pages.update')->with('question_name', $question_name)->with('answers',$answers)->with('id',$id)->with('questionnaireId',$questionnaire_id);
+        return view('pages.update')->with('question', $question)->with('answers',$answers)->with('id',$id)->with('questionnaireId',$questionnaire_id);
     }
 
     public function updateQuestions(Request $request,$id)
