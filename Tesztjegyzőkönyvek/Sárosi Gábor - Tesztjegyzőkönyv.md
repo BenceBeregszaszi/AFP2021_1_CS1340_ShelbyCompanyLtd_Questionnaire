@@ -21,3 +21,14 @@ illetve időpontjai (Alfa, Béta és Végleges verzió).
 | Menüpontok | 2021.11.15. | Menüpontok segítségével navigálás az oldalak között. | Minden menüpont a megfelelő oldalt jelenítette meg. | Nem találtam hibát. |
 
 Az Alfa tesztelés során a vizsgált elemek mind hibátlanul működtek.
+## Béta teszt
+
+| Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | --- |
+| Frontend | 2021.12.01. | A weboldal igényes, letisztult megjelenése, jQuery-Ajax elemek megfelelő működése | A menürendszer egyszerű/minimalista, a weboldal intuitív. | Nem találtam hibát. |
+| Backend | 2021.12.01. | PHP-SQL kódok megfelelő működése. | A backend kódjai tökéletesen működtek. | Nem találtam hibát. |
+| Oldalfunkciók | 2021.11.27. | Új kitöltő oldal létrehozása. Kitöltő adatai + kérdésekre adott válaszok megjelenítése, küldést követően ezek eltárolása| A kitöltés beküldése után az adatbázis megfelelően kezeli a beérkező adatokat. | Nem találtam hibát. |
+| Oldalfunkciók | 2021.11.27. | A kilistázásnál linkként lekérhető a kérdőív kitöltésére navigáló hivatkozás | Sikeresen a vágólapra másolódott a link | Nem találtam hibát. |
+| Oldalfunkciók | 2021.11.30. | Statisztika oldal kilistázza az összes kérdést, megjeleníti a beküldött adatok alapján elkészült diagrammokat | A nemi és életkor szerint csoportosított adatok helyesen jelennek meg. | Nem találtam hibát. |
+
+A Béta teszt sikeresen zajlott, a felmerülő esztétikai hibák gyorsan orvosolhatók voltak.
