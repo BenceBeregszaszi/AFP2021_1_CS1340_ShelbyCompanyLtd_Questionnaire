@@ -22,5 +22,18 @@ Az Alfa tesztelés során a vizsgált elemek mind hibátlanul működtek, az ada
 
 Következő tesztelésnél a többi funkció kerül vizsgálatra illetve elemzésre.
 ## Béta teszt
+| Vizsgálat | Tesztelés időpontja | Elvárás | Eredmény | Hibák |
+| :---: | --- | --- | --- | --- |
+| Oldalfunkciók | 2021.11.27. | A kilistázásnál linkként lekérhető a kérdőív kitöltésére navigáló hivatkozás | Sikeresen a vágólapra másolódott a link | Nem találtam hibát. |
+| Oldalfunkciók | 2021.11.27. | Új kitöltő oldal létrehozása. Kitöltő adatai + kérdésekre adott válaszok megjelenítése, küldést követően ezek eltárolása| A kitöltés beküldése után az adatbázis megfelelően kezeli a beérkező adatokat. | Nem találtam hibát. |
+| Oldalfunkciók | 2021.11.30. | Statisztika oldal kilistázza az összes kérdést, megjeleníti a beküldött adatok alapján elkészült diagrammokat | A nemi és életkor szerint csoportosított adatok helyesen jelennek meg. | Nem találtam hibát. |
+| Frontend | 2021.12.01. | A weboldal igényes, letisztult megjelenése. | A menürendszer egyszerű/minimalista, a weboldal intuitív. | Nem találtam hibát. |
+| Backend | 2021.12.01. | A backendben megírt PHP-SQL-jQuery-Ajax kódok megfelelő működése. | A backend kódjai tökéletesen működtek. | Nem találtam hibát. |
+
+
+A Béta teszt is sikeresen zajlott, a felmerülő hibák szinte azonnal orvosolhatóak voltak.
+
+A végleges tesztelésnél az összes fent felsorolt vizsgálati elem újra ellenőrzésre kerül.
+
 
 ## Végleges teszt
