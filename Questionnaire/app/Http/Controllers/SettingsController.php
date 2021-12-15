@@ -262,7 +262,7 @@ class SettingsController extends Controller
         if($tipus == 'kerdoiv')
         {
             DB::table('kerdoivs')->where('kerdoiv_id', $id)->update(array('kerdoiv_nev' => $ujNev));
-            return redirect('/settings/'.$id.'/questions');
+            return redirect('/settings/'.$id.'/edit');
         }
         else
         {
