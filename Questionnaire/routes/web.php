@@ -34,5 +34,7 @@ Route::get('/statistics', [PagesController::class, 'charts'])->name('statistics'
 Route::get('/kitolt/{id}', [PagesController::class, 'kitolt']);
 
 Route::post('/settings/change', [SettingsController::class, 'changeNames']);
+Route::post('/send', [SettingsController::class, 'sendResults']);
+
 
 Auth::routes();
