@@ -47,17 +47,17 @@
                            <hr class="pt-5">
                         </td>
                         <td class="p-2 m-1/3">
-                          <button  class="copyBtn p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"
+                          <button  class="copyBtn p-3 text-center text-lg font-light rounded-lg bg-red-600 transition hover:bg-red-800"
                           name="linkCopier" type="button" value="http://127.0.0.1:8000/kitolt/{{ $questionnaire->kerdoiv_id }}">Link</button>  
                         
                         </td>
-                        <td class="p-2 m-1/3"><a href="/settings/{{ $questionnaire->kerdoiv_id }}/edit">
-                          <p class="p-2 text-center text-lg rounded-md bg-yellow-300 transition hover:bg-yellow-400"> Módosítás </p>
+                        <td class="p- m-1/3"><a href="/settings/{{ $questionnaire->kerdoiv_id }}/edit">
+                          <p class="p-3 text-center text-lg rounded-lg bg-yellow-300 transition hover:bg-yellow-400"> Módosítás </p>
                          </a>
                         
                         <td class="p-2 m-1/3 text-white">
                           <input type="hidden" name="hiddenid" value="{{ $questionnaire->kerdoiv_id }}">
-                          <button class="deleteBtn p-2 text-center text-lg font-light rounded-md bg-red-600 transition hover:bg-red-800"
+                          <button class="deleteBtn p-3 text-center text-lg font-light rounded-lg bg-red-600 transition hover:bg-red-800"
                           data-id="{{ $questionnaire->kerdoiv_id }}" data-type="questionnaire"  name="id" type="button">Törlés</button> 
                           
                        </td>
