@@ -225,14 +225,21 @@ class SettingsController extends Controller
 
     public function updateQuestions(Request $request,$id)
     {   
-        $answers = DB::table('valaszoks')
-        ->select('*')
-        ->where('kerdes_id', '=', $id)->get();
-        foreach ($answers as $answer) {
-            $helyettesito = $request->input("szoveg".$answer->valaszok_id);
-            DB::table('valaszoks')->where('valaszok_id', $answer->valaszok_id)->update(array('valasz' => $helyettesito));
+        public function updateQuestions(Request $request)
+    {   
+        if(isset($_POST['answerIds']) and isset($_POST['answers'])){
+            $answerIdArr = $_POST['answerIds'];
+            $answerArr = $_POST['answers'];
+            for ($num = 0 ; $num < count($answerArr); $num++) {
+                DB::table('valaszoks')->where([
+                    ['valaszok_id', '=', $answerIdArr[$num]]])
+                    ->update(
+                        ['valasz' => $answerArr[$num]]
+                );
+            }
+            return response()->json(['success'=>'Sikeres módosítás!']);
         }
-        return redirect('/settings')->with('message','Sikeres módosítás!');
+    }
     }
 /**
      * Remove the specified resource from storage.
