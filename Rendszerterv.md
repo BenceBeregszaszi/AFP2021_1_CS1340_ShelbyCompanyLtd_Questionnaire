@@ -19,7 +19,7 @@ Projektmunkások, felelősségek:
 - Adatbázis tervezés és annak létrehozása: Kecse Károly, Nagy Péter Axel
 - Frontend: Banyik Nándor, Kecse Károly, Nagy Péter Axel, Sárosi Gábor
 - Frontend design: Sárosi Gábor
-- Backend: Banyik Nándor, Kecse Károly, Sárosi Gábor
+- Backend: Banyik Nándor, Kecse Károly, Sárosi Gábor, Nagy Péter Axel
 - Tesztelés: Banyik Nándor, Kecse Károly, Nagy Péter Axel, Sárosi Gábor
 
 ## Üzleti folyamatok modellje
