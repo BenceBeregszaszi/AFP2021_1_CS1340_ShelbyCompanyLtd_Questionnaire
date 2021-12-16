@@ -73,6 +73,6 @@ Intuitív - Magától értetődő
 
 Autentikáció - Hitelesítés. (A projekt esetében: Ne kelljen külön felhasználói fiókot arra létrehozni, hogy kitöltsünk egy kérdőívet.)
 
-Laravel - Egy ingyenes, nyílt forráskódú PHP web framework, melynek célja, hogy MVC modellre illeszkedően leegyszerűsítse a webalkalmazások fejlesztését
+Laravel - Egy ingyenes, nyílt forráskódú PHP web framework, melynek célja, hogy MVC modellre illeszkedően leegyszerűsítse a webalkalmazások fejlesztését.
 
 MVC: Egy népszerű szoftverfejlesztési dizájn webalkalmazások létrehozásakor.
